@@ -65,4 +65,9 @@ input, button {
   to {
     opacity: 1;
   }
+
+  .plan-card p strong {
+  color: #28a745;
+}
+
 }
