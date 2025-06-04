@@ -80,6 +80,10 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       const speed = document.getElementById("speed").value;
       const monthly = document.getElementById("monthly").value;
+      const offer = document.getElementById("offer").value;
+
+plans.push({ speed, monthly, quarterly, halfYearly, yearly, offer });
+
       const quarterly = document.getElementById("quarterly").value;
       const halfYearly = document.getElementById("halfYearly").value;
       const yearly = document.getElementById("yearly").value;
