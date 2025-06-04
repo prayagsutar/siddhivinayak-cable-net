@@ -11,13 +11,15 @@ function loadPlans() {
     const card = document.createElement("div");
     card.className = "plan-card";
     card.style.animationDelay = `${i * 0.2}s`;
-    card.innerHTML = `
-      <h3>${plan.speed}</h3>
-      <p>Monthly: ₹${plan.monthly}</p>
-      <p>Quarterly: ₹${plan.quarterly}</p>
-      <p>Half-Yearly: ₹${plan.halfYearly}</p>
-      <p>Yearly: ₹${plan.yearly}</p>
-    `;
+   card.innerHTML = `
+  <h3>${plan.speed}</h3>
+  <p>Monthly: ₹${plan.monthly}</p>
+  <p>Quarterly: ₹${plan.quarterly}</p>
+  <p>Half-Yearly: ₹${plan.halfYearly}</p>
+  <p>Yearly: ₹${plan.yearly}</p>
+  ${plan.offer ? `<p style="color:green;"><strong>🎁 Offer:</strong> ${plan.offer}</p>` : ""}
+`;
+
     container.appendChild(card);
   });
 }
@@ -35,14 +37,16 @@ function loadExistingPlans() {
   plans.forEach((plan, index) => {
     const div = document.createElement("div");
     div.className = "plan-card";
-    div.innerHTML = `
-      <h3>${plan.speed}</h3>
-      <p>Monthly: ₹${plan.monthly}</p>
-      <p>Quarterly: ₹${plan.quarterly}</p>
-      <p>Half-Yearly: ₹${plan.halfYearly}</p>
-      <p>Yearly: ₹${plan.yearly}</p>
-      <button onclick="deletePlan(${index})">Delete</button>
-    `;
+   div.innerHTML = `
+  <h3>${plan.speed}</h3>
+  <p>Monthly: ₹${plan.monthly}</p>
+  <p>Quarterly: ₹${plan.quarterly}</p>
+  <p>Half-Yearly: ₹${plan.halfYearly}</p>
+  <p>Yearly: ₹${plan.yearly}</p>
+  ${plan.offer ? `<p style="color:green;"><strong>Offer:</strong> ${plan.offer}</p>` : ""}
+  <button onclick="deletePlan(${index})">Delete</button>
+`;
+
     existing.appendChild(div);
   });
 }
